@@ -75,6 +75,7 @@ numero = inputCodigo.value;
 function validarCodigoNumerico(e) {
     e.preventDefault()
     console.log(e)
+
     if (Pizzas.some(elemento => elemento.id == numero)) {
         Pizzas.forEach((elemento => {
             if (elemento.id == numero) {
@@ -89,19 +90,30 @@ function validarCodigoNumerico(e) {
 
         }))
     }
-    else {
-        nombrePizza.textContent = "##_ERROR_##"
+    else if (numero === "") {
+
+        nombrePizza.textContent = "[.......]"
         valorPizza.textContent = "..."
         liCreate.textContent = ""
 
+        alert("Ingrese Un Numero ")
 
+    }
+
+    else {
+
+
+        nombrePizza.textContent = "##_ERROR_##"
+        valorPizza.textContent = "..."
+        liCreate.textContent = ""
         alert("Ese Numero no Existe o no fue registrado aun")
 
     }
 
-
-
 }
+
+
+
 
 
 
